@@ -56,3 +56,7 @@ LABEL url="https://www.github.com/pi-hole/docker-pi-hole"
 HEALTHCHECK CMD dig +norecurse +retry=0 @127.0.0.1 pi.hole || exit 1
 
 SHELL ["/bin/bash", "-c"]
+
+#start of pi.alert stuff
+
+CMD apt-get install arp-scan && arp-scan -l
